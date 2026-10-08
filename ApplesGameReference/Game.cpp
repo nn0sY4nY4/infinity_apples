@@ -29,7 +29,9 @@ namespace ApplesGame
 			return;
 
 		gameState.eatSound.setBuffer(gameState.eatBuffer);
+		gameState.eatSound.setVolume(50);
 		gameState.crashSound.setBuffer(gameState.crashBuffer);
+		gameState.crashSound.setVolume(75);
 	}
 
 	void RestartGame(GameState& gameState)

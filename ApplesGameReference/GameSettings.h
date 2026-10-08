@@ -14,6 +14,6 @@ namespace ApplesGame
 	const float ACCELERATION = 10.f; // For each eaten apple player speed will be increased by this value
 	const int NUM_APPLES = 20;
 	const int NUM_WALLS = 10;
-	const unsigned int SCREEN_WIDTH = 1920;
-	const unsigned int SCREEN_HEGHT = 1080;
+	const unsigned int SCREEN_WIDTH = 800;
+	const unsigned int SCREEN_HEGHT = 600;
 }
