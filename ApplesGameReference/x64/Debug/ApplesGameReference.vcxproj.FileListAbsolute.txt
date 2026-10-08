@@ -1,0 +1,2 @@
+C:\Users\Mosyanya\Desktop\xyz-cpp-course-lesson-1-3-3\ApplesGameReference\x64\Debug\ApplesGameReference.exe
+C:\Users\Mosyanya\Documents\GitHub\infinity_apples\ApplesGameReference\x64\Debug\ApplesGameReference.exe
