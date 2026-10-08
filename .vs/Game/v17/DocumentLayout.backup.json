@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|solutionrelative:ApplesGameReference\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE2B0BAC-971E-4D90-8222-6E7554C835EE}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\SFMLTemplate\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AE2B0BAC-971E-4D90-8222-6E7554C835EE}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\Wall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|solutionrelative:ApplesGameReference\\Wall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|solutionrelative:ApplesGameReference\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,52 +24,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "GameMain.cpp",
-              "DocumentMoniker": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\GameMain.cpp",
-              "RelativeDocumentMoniker": "ApplesGameReference\\GameMain.cpp",
-              "ToolTip": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\GameMain.cpp",
-              "RelativeToolTip": "ApplesGameReference\\GameMain.cpp",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAD8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-08T10:20:14.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameMain.cpp",
               "DocumentMoniker": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\SFMLTemplate\\GameMain.cpp",
               "RelativeDocumentMoniker": "SFMLTemplate\\GameMain.cpp",
               "ToolTip": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\SFMLTemplate\\GameMain.cpp",
               "RelativeToolTip": "SFMLTemplate\\GameMain.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-08T10:18:49.509Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Wall.h",
-              "DocumentMoniker": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\Wall.h",
-              "RelativeDocumentMoniker": "ApplesGameReference\\Wall.h",
-              "ToolTip": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\Wall.h",
-              "RelativeToolTip": "ApplesGameReference\\Wall.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-10-08T10:09:53.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Wall.cpp",
-              "DocumentMoniker": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\Wall.cpp",
-              "RelativeDocumentMoniker": "ApplesGameReference\\Wall.cpp",
-              "ToolTip": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\Wall.cpp",
-              "RelativeToolTip": "ApplesGameReference\\Wall.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAB4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-08T10:09:53.179Z",
+              "WhenOpened": "2026-10-08T11:11:06.301Z",
               "EditorCaption": ""
             }
           ]

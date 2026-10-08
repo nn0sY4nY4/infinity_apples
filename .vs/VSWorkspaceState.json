@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ApplesGameReference"
   ],
-  "SelectedNode": "\\Game.sln",
+  "SelectedNode": "\\ApplesGameReference\\GameMain.cpp",
   "PreviewInSolutionExplorer": false
 }
