@@ -14,6 +14,21 @@ namespace ApplesGame
 
 		InitUI(gameState.uiState, gameState.font);
 		RestartGame(gameState);
+
+		if (!gameState.backMusic.openFromFile("Resources/pacman.wav"))
+			return;
+
+		gameState.backMusic.setLoop(true);
+		gameState.backMusic.play();
+
+		if (!gameState.eatBuffer.loadFromFile("Resources/eat.wav"))
+			return;
+
+		if (!gameState.crashBuffer.loadFromFile("Resources/crash.wav"))
+			return;
+
+		gameState.eatSound.setBuffer(gameState.eatBuffer);
+		gameState.crashSound.setBuffer(gameState.crashBuffer);
 	}
 
 	void RestartGame(GameState& gameState)
@@ -32,6 +47,7 @@ namespace ApplesGame
 		}
 
 		// Init game state
+		gameState.backMusic.play();
 		gameState.numEatenApples = 0;
 		gameState.isGameOver = false;
 		gameState.timeSinceGameOver = 0.f;
@@ -84,18 +100,22 @@ namespace ApplesGame
 				// Check collision with apple
 				if (HasPlayerCollisionWithApple(gameState.player, gameState.apples[i]))
 				{
+					gameState.eatSound.play();
 					// Move apple to a new random position
 					InitApple(gameState.apples[i], gameState.appleTexture);
 					// Increase eaten apples counter
 					gameState.numEatenApples++;
 					// Increase player speed
 					gameState.player.speed += ACCELERATION;
+
 				}
 			}
 
 			// Check collision with screen border
 			if (HasPlayerCollisionWithScreenBorder(gameState.player))
 			{
+				gameState.backMusic.stop();
+				gameState.crashSound.play();
 				gameState.isGameOver = true;
 				gameState.timeSinceGameOver = 0.f;
 			}
@@ -104,6 +124,8 @@ namespace ApplesGame
 				// Check collision with walls
 				if (HasPlayerCollisionWithWall(gameState.player, gameState.walls[i]))
 				{
+					gameState.backMusic.stop();
+					gameState.crashSound.play();
 					gameState.isGameOver = true;
 					gameState.timeSinceGameOver = 0.f;
 				}

@@ -1,5 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
 
 #include "Player.h"
 #include "Apple.h"
@@ -24,6 +26,11 @@ namespace ApplesGame
 		sf::Texture playerTexture;
 		sf::Texture appleTexture;
 		sf::Texture wallTexture;
+		sf::SoundBuffer crashBuffer;
+		sf::SoundBuffer eatBuffer;
+		sf::Sound crashSound;
+		sf::Sound eatSound;
+		sf::Music backMusic;
 	};
 
 	void InitGame(GameState& gameState);

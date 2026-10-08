@@ -7,11 +7,11 @@ namespace ApplesGame
 	void InitUI(UIState& uiState, const sf::Font& font) 
 	{
 		uiState.scoreText.setFont(font);
-		uiState.scoreText.setCharacterSize(24);
+		uiState.scoreText.setCharacterSize(18);
 		uiState.scoreText.setFillColor(sf::Color::Yellow);
 
 		uiState.inputHintText.setFont(font);
-		uiState.inputHintText.setCharacterSize(24);
+		uiState.inputHintText.setCharacterSize(15);
 		uiState.inputHintText.setFillColor(sf::Color::White);
 		uiState.inputHintText.setString("Use arrow keys to move, Space to restart, ESC to exit");
 		uiState.inputHintText.setOrigin(GetTextOrigin(uiState.inputHintText, { 1.f, 0.f } ));
