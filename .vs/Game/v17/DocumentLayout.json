@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|solutionrelative:ApplesGameReference\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{84F2CC44-BACB-497F-A3B8-81DBCCD3AD5B}|ApplesGameReference\\ApplesGameReference.vcxproj|solutionrelative:ApplesGameReference\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GameMain.cpp",
-              "DocumentMoniker": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\GameMain.cpp",
-              "RelativeDocumentMoniker": "ApplesGameReference\\GameMain.cpp",
-              "ToolTip": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\GameMain.cpp",
-              "RelativeToolTip": "ApplesGameReference\\GameMain.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAUAAAAAAAAAA==",
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\Game.cpp",
+              "RelativeDocumentMoniker": "ApplesGameReference\\Game.cpp",
+              "ToolTip": "C:\\Users\\Mosyanya\\Documents\\GitHub\\infinity_apples\\ApplesGameReference\\Game.cpp",
+              "RelativeToolTip": "ApplesGameReference\\Game.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-08T11:18:59.311Z",
+              "WhenOpened": "2026-10-08T17:24:35.064Z",
               "EditorCaption": ""
             }
           ]

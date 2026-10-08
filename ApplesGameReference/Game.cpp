@@ -20,6 +20,7 @@ namespace ApplesGame
 
 		gameState.backMusic.setLoop(true);
 		gameState.backMusic.play();
+		gameState.backMusic.setVolume(75);
 
 		if (!gameState.eatBuffer.loadFromFile("Resources/eat.wav"))
 			return;
