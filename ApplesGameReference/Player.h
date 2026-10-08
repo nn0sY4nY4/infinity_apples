@@ -19,6 +19,7 @@ namespace ApplesGame
 		float speed = 0.f; // Pixels per second
 		PlayerDirection direction = PlayerDirection::Up;
 		sf::Sprite sprite;
+		bool isOnWeb = false;
 	};
 
 	void InitPlayer(Player& player, const sf::Texture& texture);
@@ -27,6 +28,7 @@ namespace ApplesGame
 	bool HasPlayerCollisionWithScreenBorder(const Player& player);
 	bool HasPlayerCollisionWithApple(const Player& player, const struct Apple& apple);
 	bool HasPlayerCollisionWithWall(const Player& player, const struct Wall& wall);
+	bool HasPlayerCollisionWithWeb(const Player& player, const struct Web& web);
 
 	void DrawPlayer(Player& player, sf::RenderWindow& window);
 }

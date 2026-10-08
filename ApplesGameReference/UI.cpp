@@ -27,7 +27,10 @@ namespace ApplesGame
 
 	void UpdateUI(UIState& uiState, const struct GameState& gameState, float timeDelta)
 	{
-		uiState.scoreText.setString("Apples eaten: " + std::to_string(gameState.numEatenApples));
+		uiState.scoreText.setString
+		(
+			"Apples eaten: " + std::to_string(gameState.numEatenApples) + "\nUr speed : " + std::to_string(gameState.player.speed)
+		);
 
 		uiState.isGameOverTextVisible = gameState.isGameOver;
 		sf::Color gameOverTextColor = (int)gameState.timeSinceGameOver % 2? sf::Color::Red : sf::Color::Yellow;

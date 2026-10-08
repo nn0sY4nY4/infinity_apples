@@ -3,6 +3,7 @@
 #include "GameSettings.h"
 #include "Apple.h"
 #include "Wall.h"
+#include "Web.h"
 
 
 namespace ApplesGame
@@ -14,6 +15,7 @@ namespace ApplesGame
 		player.position.y = (float)SCREEN_HEGHT / 2.f;
 		player.speed = INITIAL_SPEED;
 		player.direction = PlayerDirection::Up;
+		player.isOnWeb = false;
 
 		// Init sprite
 		player.sprite.setTexture(texture);
@@ -71,6 +73,14 @@ namespace ApplesGame
 		float dy = player.position.y - wall.position.y;
 		float distance = sqrt(dx * dx + dy * dy);
 		return distance < (PLAYER_SIZE + WALL_SIZE) / 2.f;
+	}
+
+	bool HasPlayerCollisionWithWeb(const Player& player, const Web& web)
+	{
+		float dx = player.position.x - web.position.x;
+		float dy = player.position.y - web.position.y;
+		float distance = sqrt(dx * dx + dy * dy);
+		return distance < (PLAYER_SIZE + WEB_SIZE) / 2.f;
 	}
 
 	void DrawPlayer(Player& player, sf::RenderWindow& window)

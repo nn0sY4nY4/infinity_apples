@@ -1,5 +1,4 @@
 ﻿#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
 #include <cstdlib>
 
 #include "Game.h"
@@ -30,7 +29,7 @@ int main()
 	srand(seed);
 
 	// Init window
-	sf::RenderWindow window(sf::VideoMode(ApplesGame::SCREEN_WIDTH, ApplesGame::SCREEN_HEGHT), "AppleGame");
+	sf::RenderWindow window(sf::VideoMode(ApplesGame::SCREEN_WIDTH, ApplesGame::SCREEN_HEGHT), "InfinityApples");
 
 	ApplesGame::GameState gameState;
 	InitGame(gameState);

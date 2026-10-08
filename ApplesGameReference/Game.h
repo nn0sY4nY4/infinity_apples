@@ -2,10 +2,10 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-
 #include "Player.h"
 #include "Apple.h"
 #include "Wall.h"
+#include "Web.h"
 #include "UI.h"
 #include "GameSettings.h"
 
@@ -16,6 +16,7 @@ namespace ApplesGame
 		Player player;
 		Apple apples[NUM_APPLES];
 		Wall walls[NUM_WALLS];
+		Web webs[NUM_WEBS];
 		int numEatenApples = 0;
 		UIState uiState;
 		bool isGameOver = false;
@@ -26,10 +27,13 @@ namespace ApplesGame
 		sf::Texture playerTexture;
 		sf::Texture appleTexture;
 		sf::Texture wallTexture;
+		sf::Texture webTexture;
 		sf::SoundBuffer crashBuffer;
 		sf::SoundBuffer eatBuffer;
+		sf::SoundBuffer slowBuffer;
 		sf::Sound crashSound;
 		sf::Sound eatSound;
+		sf::Sound slowSound;
 		sf::Music backMusic;
 	};
 

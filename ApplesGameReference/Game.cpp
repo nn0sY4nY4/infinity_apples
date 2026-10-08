@@ -1,7 +1,6 @@
 #include "Game.h"
 #include <assert.h>
 
-
 namespace ApplesGame
 {
 	void InitGame(GameState& gameState)
@@ -10,6 +9,7 @@ namespace ApplesGame
 		assert(gameState.playerTexture.loadFromFile(RESOURCES_PATH + "Pacman.png"));
 		assert(gameState.appleTexture.loadFromFile(RESOURCES_PATH + "Apple.png"));
 		assert(gameState.wallTexture.loadFromFile(RESOURCES_PATH + "Wall.png"));
+		assert(gameState.webTexture.loadFromFile(RESOURCES_PATH + "Web.png"));
 		assert(gameState.font.loadFromFile(RESOURCES_PATH + "Fonts/Roboto-Regular.ttf"));
 
 		InitUI(gameState.uiState, gameState.font);
@@ -28,10 +28,15 @@ namespace ApplesGame
 		if (!gameState.crashBuffer.loadFromFile("Resources/crash.wav"))
 			return;
 
+		if (!gameState.slowBuffer.loadFromFile("Resources/slow.wav"))
+			return;
+
 		gameState.eatSound.setBuffer(gameState.eatBuffer);
 		gameState.eatSound.setVolume(50);
 		gameState.crashSound.setBuffer(gameState.crashBuffer);
 		gameState.crashSound.setVolume(75);
+		gameState.slowSound.setBuffer(gameState.slowBuffer);
+		gameState.slowSound.setVolume(50);
 	}
 
 	void RestartGame(GameState& gameState)
@@ -47,6 +52,11 @@ namespace ApplesGame
 		for (int i = 0; i < NUM_WALLS; i++)
 		{
 			InitWall(gameState.walls[i], gameState.wallTexture);
+		}
+		//Init webs
+		for (int i = 0; i < NUM_WEBS; i++)
+		{
+			InitWeb(gameState.webs[i], gameState.webTexture);
 		}
 
 		// Init game state
@@ -122,6 +132,7 @@ namespace ApplesGame
 				gameState.isGameOver = true;
 				gameState.timeSinceGameOver = 0.f;
 			}
+
 			for (int i = 0; i < NUM_WALLS; i++)
 			{
 				// Check collision with walls
@@ -133,6 +144,30 @@ namespace ApplesGame
 					gameState.timeSinceGameOver = 0.f;
 				}
 			}
+
+			bool isOnWeb = false;
+
+			for (int i = 0; i < NUM_WEBS; i++)
+			{
+				if (HasPlayerCollisionWithWeb(gameState.player, gameState.webs[i]))
+				{
+					isOnWeb = true;
+					break;
+				}
+			}
+			
+			if (isOnWeb && !gameState.player.isOnWeb)
+			{
+					gameState.slowSound.play();
+					gameState.player.speed += SLOWDOWN;
+
+					if (gameState.player.speed < 0.f)
+					{
+						gameState.player.speed = 0.f;
+					}
+
+			}
+			gameState.player.isOnWeb = isOnWeb;
 		}
 		else
 		{
@@ -155,6 +190,11 @@ namespace ApplesGame
 		for (int i = 0; i < NUM_WALLS; i++)
 		{
 			DrawWall(gameState.walls[i], window);
+		}
+		
+		for (int i = 0; i < NUM_WEBS; i++)
+		{
+			DrawWeb(gameState.webs[i], window);
 		}
 
 		DrawUI(gameState.uiState, window);
