@@ -1,14 +1,2 @@
-﻿  Game.cpp
-  GameMain.cpp
-  UI.cpp
-C:\Users\Mosyanya\Documents\GitHub\infinity_apples\ApplesGameReference\GameMain.cpp(28,24): error C2665: "sf::SoundBuffer::SoundBuffer": ни одна перегруженная функция не может преобразовать все типы аргументов
-      C:\Users\Mosyanya\Documents\GitHub\infinity_apples\SFML\SFML-2.5.1\include\SFML\Audio\SoundBuffer.hpp(65,5):
-      может быть "sf::SoundBuffer::SoundBuffer(const sf::SoundBuffer &)"
-          C:\Users\Mosyanya\Documents\GitHub\infinity_apples\ApplesGameReference\GameMain.cpp(28,24):
-          "sf::SoundBuffer::SoundBuffer(const sf::SoundBuffer &)": невозможно преобразовать аргумент 1 из "const char [11]" в "const sf::SoundBuffer &"
-              C:\Users\Mosyanya\Documents\GitHub\infinity_apples\ApplesGameReference\GameMain.cpp(28,25):
-              Причина: невозможно преобразовать "const char [11]" в "const sf::SoundBuffer"
-      C:\Users\Mosyanya\Documents\GitHub\infinity_apples\ApplesGameReference\GameMain.cpp(28,24):
-      при попытке сопоставить список аргументов "(const char [11])"
-  
-  Создание кода...
+﻿  GameMain.cpp
+  ApplesGameReference.vcxproj -> C:\Users\Mosyanya\Documents\GitHub\infinity_apples\ApplesGameReference\x64\Debug\ApplesGameReference.exe

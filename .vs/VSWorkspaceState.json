@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ApplesGameReference"
+    "\\ApplesGameReference",
+    "\\SFMLTemplate"
   ],
-  "SelectedNode": "\\ApplesGameReference\\GameMain.cpp",
+  "SelectedNode": "\\SFMLTemplate\\GameMain.cpp",
   "PreviewInSolutionExplorer": false
 }

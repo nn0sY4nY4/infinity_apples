@@ -25,7 +25,27 @@ void HandleWindowEvents(sf::RenderWindow& window)
 
 int main()
 {
-	sf::SoundBuffer buffer("pacman.wav");
+	//sf::SoundBuffer backmusic;
+
+	//if (!backmusic.loadFromFile("Resources/pacman.wav"))
+	//	return -1;
+
+	//sf::Sound sound(backmusic);
+
+	//sound.setVolume(50);
+	//sound.setLoop(true);
+	//sound.play();
+
+	sf::Music backmusic;
+
+	if (!backmusic.openFromFile("Resources/pacman.wav"))
+		return -1;
+
+	//backmusic.setPlayingOffset(sf::seconds(1.f));
+	backmusic.setLoop(true);
+	backmusic.play();
+
+
 	// Init random number generator
 	unsigned int seed = (unsigned int)time(nullptr); // Get current time as seed. You can also use any other number to fix randomization
 	srand(seed);

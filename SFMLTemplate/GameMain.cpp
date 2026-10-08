@@ -8,7 +8,6 @@ const std::string RESOURCES_PATH = "Resources/";
 
 int main()
 {
-	sf::SoundBuffer buffer("pacman.wav");
 	sf::RenderWindow window(sf::VideoMode(330, 400), "SFML works!");
 
 	sf::Texture logo;
