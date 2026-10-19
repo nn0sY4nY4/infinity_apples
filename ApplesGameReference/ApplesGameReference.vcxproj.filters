@@ -31,6 +31,9 @@
     <ClCompile Include="Web.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="LifeBar.h">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">

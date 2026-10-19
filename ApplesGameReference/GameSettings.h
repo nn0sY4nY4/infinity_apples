@@ -8,6 +8,7 @@ namespace ApplesGame
 
 	// Game settings constants
 	const float PLAYER_SIZE = 33.f;
+	//const float PLAYER_HP = 100.f;
 	const float APPLE_SIZE = 20.f;
 	const float WALL_SIZE = 25.f;
 	const float WEB_SIZE = 17.f;

@@ -8,12 +8,15 @@
 #include "Web.h"
 #include "UI.h"
 #include "GameSettings.h"
+#include "LifeBar.h"
 
 namespace ApplesGame
 {
 	struct GameState
 	{
+
 		Player player;
+		LifeBar lifebarPlayer;
 		Apple apples[NUM_APPLES];
 		Wall walls[NUM_WALLS];
 		Web webs[NUM_WEBS];

@@ -37,6 +37,8 @@ namespace ApplesGame
 		gameState.crashSound.setVolume(75);
 		gameState.slowSound.setBuffer(gameState.slowBuffer);
 		gameState.slowSound.setVolume(50);
+
+		LifeBar lifebarPlayer;
 	}
 
 	void RestartGame(GameState& gameState)
@@ -107,6 +109,8 @@ namespace ApplesGame
 		{
 			// Update player
 			UpdatePlayer(gameState.player, timeDelta);
+
+			lifebarPlayer.update(100);
 
 			for (int i = 0; i < NUM_APPLES; i++)
 			{
