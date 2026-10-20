@@ -1,9 +1,5 @@
-﻿  Apple.cpp
-  Game.cpp
+﻿  Game.cpp
   GameMain.cpp
-  Player.cpp
   UI.cpp
-  Wall.cpp
-  Web.cpp
   Создание кода...
   ApplesGameReference.vcxproj -> C:\Users\Mosyanya\Documents\GitHub\infinity_apples\ApplesGameReference\x64\Debug\ApplesGameReference.exe

@@ -16,7 +16,7 @@ namespace ApplesGame
 	{
 
 		Player player;
-		LifeBar lifebarPlayer;
+		//LifeBar lifebarPlayer;
 		Apple apples[NUM_APPLES];
 		Wall walls[NUM_WALLS];
 		Web webs[NUM_WEBS];
@@ -24,6 +24,7 @@ namespace ApplesGame
 		UIState uiState;
 		bool isGameOver = false;
 		float timeSinceGameOver = 0.f;
+		//float invulnerabilityTime = 0.f;
 
 		// Game resources
 		sf::Font font;

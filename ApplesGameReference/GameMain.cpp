@@ -23,7 +23,7 @@ void HandleWindowEvents(sf::RenderWindow& window)
 }
 
 int main()
-{	
+{
 	// Init random number generator
 	unsigned int seed = (unsigned int)time(nullptr); // Get current time as seed. You can also use any other number to fix randomization
 	srand(seed);
@@ -67,4 +67,5 @@ int main()
 	}
 
 	return 0;
+
 }
