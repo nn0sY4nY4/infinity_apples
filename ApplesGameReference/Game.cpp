@@ -63,6 +63,7 @@ namespace ApplesGame
 		gameState.backMusic.play();
 		gameState.numEatenApples = 0;
 		gameState.isGameOver = false;
+		gameState.isWin = false;
 		gameState.timeSinceGameOver = 0.f;
 		gameState.player.HP = INITIAL_HP;
 		gameState.timeSinceDamage = 0.f;
@@ -151,6 +152,7 @@ namespace ApplesGame
 					gameState.numEatenApples >= 10
 					)
 				{
+					gameState.isWin = true;
 					gameState.isGameOver = true;
 					gameState.backMusic.stop();
 					gameState.timeSinceGameOver = 0.f;

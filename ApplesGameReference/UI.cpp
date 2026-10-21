@@ -51,6 +51,16 @@ namespace ApplesGame
 			uiState.hpBar.setFillColor(sf::Color::Yellow);
 		else
 			uiState.hpBar.setFillColor(sf::Color::Red);
+
+		if (gameState.isWin)
+		{
+			uiState.gameOverText.setString("YOU WIN!");
+			uiState.gameOverText.setFillColor(sf::Color::Green);
+		}
+		else
+		{
+			uiState.gameOverText.setString("GAME OVER");
+		}
 	}
 
 	void DrawUI(UIState& uiState, sf::RenderWindow& window)

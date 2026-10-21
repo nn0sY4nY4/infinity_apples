@@ -28,6 +28,7 @@ namespace ApplesGame
 		Web webs[NUM_WEBS];
 		int numEatenApples = 0;
 		UIState uiState;
+		bool isWin = false;
 		bool isGameOver = false;
 		float timeSinceGameOver = 0.f;
 		float timeSinceDamage = 0.f;
