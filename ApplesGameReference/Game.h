@@ -11,8 +11,16 @@
 
 namespace ApplesGame
 {
+	enum class GameMode
+	{
+		FiniteApples,
+		InfiniteApples,
+		InfiniteApplesBoost
+	};
+
 	struct GameState
 	{
+		GameMode mode;
 
 		Player player;
 		Apple apples[NUM_APPLES];
@@ -23,7 +31,6 @@ namespace ApplesGame
 		bool isGameOver = false;
 		float timeSinceGameOver = 0.f;
 		float timeSinceDamage = 0.f;
-		//float invulnerabilityTime = 0.f;
 
 		// Game resources
 		sf::Font font;

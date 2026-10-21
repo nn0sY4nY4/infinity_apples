@@ -125,14 +125,37 @@ namespace ApplesGame
 				if (HasPlayerCollisionWithApple(gameState.player, gameState.apples[i]))
 				{
 					gameState.eatSound.play();
-					// Move apple to a new random position
 					InitApple(gameState.apples[i], gameState.appleTexture);
-					// Increase eaten apples counter
 					gameState.numEatenApples++;
-					// Increase player speed
-					gameState.player.speed += ACCELERATION;
 
+					switch (gameState.mode)
+					{
+
+					case GameMode::FiniteApples:
+						InitApple(gameState.apples[i], gameState.appleTexture);
+						break;
+
+					case GameMode::InfiniteApples:
+						InitApple(gameState.apples[i], gameState.appleTexture);
+						break;
+
+					case GameMode::InfiniteApplesBoost:
+						InitApple(gameState.apples[i], gameState.appleTexture);
+						gameState.player.speed += ACCELERATION;
+						break;
+
+					}
 				}
+
+				if (gameState.mode == GameMode::FiniteApples &&
+					gameState.numEatenApples >= 10
+					)
+				{
+					gameState.isGameOver = true;
+					gameState.backMusic.stop();
+					gameState.timeSinceGameOver = 0.f;
+				}
+
 			}
 
 			// Check collision with screen border

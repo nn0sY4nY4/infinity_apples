@@ -13,9 +13,9 @@ namespace ApplesGame
 	const float WEB_SIZE = 17.f;
 
 	const float INITIAL_SPEED = 100.f;
-	const float ACCELERATION = 10.f; // For each eaten apple player speed will be increased by this value
+	const float ACCELERATION = 10.f;
 	const float SLOWDOWN = -15.f;
-	const float INITIAL_HP= 100.f;
+	const float INITIAL_HP = 100.f;
 	const float DAMAGE = -15.f;
 
 	const int NUM_APPLES = 20;

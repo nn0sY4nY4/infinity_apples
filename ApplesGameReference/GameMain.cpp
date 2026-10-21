@@ -1,25 +1,70 @@
 ﻿#include <SFML/Graphics.hpp>
 #include <cstdlib>
-
+#include <ctime>
 #include "Game.h"
 
 using namespace ApplesGame;
 
-void HandleWindowEvents(sf::RenderWindow& window)
+enum class GameScreen
 {
-	sf::Event event;
-	while (window.pollEvent(event))
-	{
-		// Close window if close button or Escape key pressed
-		if (event.type == sf::Event::Closed)
-		{
-			window.close();
-		}
-		if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape))
-		{
-			window.close();
-		}
-	}
+    Menu,
+    Playing
+};
+
+void HandleWindowEvents(
+    sf::RenderWindow& window,
+    GameScreen& screen,
+    GameState& gameState,
+    sf::Clock& game_clock,
+    sf::Time& lastTime)
+{
+    sf::Event event;
+
+    while (window.pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed)
+        {
+            window.close();
+        }
+
+        if (event.type != sf::Event::KeyPressed)
+            continue;
+
+        if (event.key.code == sf::Keyboard::Escape)
+        {
+            if (screen == GameScreen::Playing)
+                screen = GameScreen::Menu;
+            else
+                window.close();
+
+            continue;
+        }
+
+        if (screen != GameScreen::Menu)
+            continue;
+
+        switch (event.key.code)
+        {
+        case sf::Keyboard::Num1:
+            gameState.mode = GameMode::FiniteApples;
+            break;
+
+        case sf::Keyboard::Num2:
+            gameState.mode = GameMode::InfiniteApples;
+            break;
+
+        case sf::Keyboard::Num3:
+            gameState.mode = GameMode::InfiniteApplesBoost;
+            break;
+
+        default:
+            continue;
+        }
+
+        RestartGame(gameState);
+        screen = GameScreen::Playing;
+        lastTime = game_clock.getElapsedTime();
+    }
 }
 
 int main()
@@ -38,34 +83,55 @@ int main()
 	sf::Clock game_clock;
 	sf::Time lastTime = game_clock.getElapsedTime();
 
-	// Game loop
-	while (window.isOpen())
-	{
-		HandleWindowEvents(window);
+    GameScreen screen = GameScreen::Menu;
 
-		if (!window.isOpen())
-		{
-			return 0;
-		}
+    sf::Font font;
+    if (!font.loadFromFile(
+        RESOURCES_PATH + "Fonts/Roboto-Regular.ttf"))
+    {
+        return 1;
+    }
 
-		HandleInput(gameState);
+    sf::Text menuText;
+    menuText.setFont(font);
+    menuText.setCharacterSize(32);
+    menuText.setFillColor(sf::Color::White);
+    menuText.setString(
+        "INFINITY APPLES\n\n"
+        "1 - Finite Apples\n\n"
+        "2 - Infinite Apples\n\n"
+        "3 - Infinite Apples + Boost\n\n"
+        "ESC - Exit"
+    );
+    menuText.setPosition(100.f, 70.f);
 
-		// Calculate time delta
-		sf::Time currentTime = game_clock.getElapsedTime();
-		float timeDelta = currentTime.asSeconds() - lastTime.asSeconds();
-		lastTime = currentTime;
-		UpdateGame(gameState, timeDelta);
+    while (window.isOpen())
+    {
+        HandleWindowEvents(
+            window, screen, gameState, game_clock, lastTime);
 
-		// Draw everything here
-		// Clear the window first
-		window.clear(sf::Color(143, 71, 71, 128));
+        if (!window.isOpen())
+            break;
 
-		DrawGame(gameState, window);
+        window.clear(sf::Color(143, 71, 71));
 
-		// End the current frame, display window contents on screen
-		window.display();
-	}
+        if (screen == GameScreen::Menu)
+        {
+            window.draw(menuText);
+        }
+        else
+        {
+            HandleInput(gameState);
 
-	return 0;
+            sf::Time currentTime = game_clock.getElapsedTime();
+            float timeDelta =
+                currentTime.asSeconds() - lastTime.asSeconds();
+            lastTime = currentTime;
 
+            UpdateGame(gameState, timeDelta);
+            DrawGame(gameState, window);
+        }
+
+        window.display();
+    }
 }
