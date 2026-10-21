@@ -16,6 +16,7 @@ namespace ApplesGame
 		player.speed = INITIAL_SPEED;
 		player.direction = PlayerDirection::Up;
 		player.isOnWeb = false;
+		player.HP = INITIAL_HP;
 
 		// Init sprite
 		player.sprite.setTexture(texture);

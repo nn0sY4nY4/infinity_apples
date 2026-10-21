@@ -64,6 +64,9 @@ namespace ApplesGame
 		gameState.numEatenApples = 0;
 		gameState.isGameOver = false;
 		gameState.timeSinceGameOver = 0.f;
+		gameState.player.HP = INITIAL_HP;
+		gameState.timeSinceDamage = 0.f;
+
 	}
 
 	void HandleInput(GameState& gameState)
@@ -103,6 +106,14 @@ namespace ApplesGame
 
 	void UpdateGame(GameState& gameState, float timeDelta)
 	{
+		if (gameState.timeSinceDamage > 0.f)
+		{
+			gameState.timeSinceDamage -= timeDelta;
+
+			if (gameState.timeSinceDamage < 0.f)
+				gameState.timeSinceDamage = 0.f;
+		}
+
 		if (!gameState.isGameOver)
 		{
 			// Update player
@@ -127,21 +138,62 @@ namespace ApplesGame
 			// Check collision with screen border
 			if (HasPlayerCollisionWithScreenBorder(gameState.player))
 			{
-				gameState.backMusic.stop();
-				gameState.crashSound.play();
-				gameState.isGameOver = true;
-				gameState.timeSinceGameOver = 0.f;
+				switch (gameState.player.direction)
+				{
+				case PlayerDirection::Up:
+					gameState.player.direction = PlayerDirection::Down;
+					gameState.player.position.y = PLAYER_SIZE / 2.f;
+					break;
+
+				case PlayerDirection::Down:
+					gameState.player.direction = PlayerDirection::Up;
+					gameState.player.position.y = SCREEN_HEGHT - PLAYER_SIZE / 2.f;
+					break;
+
+				case PlayerDirection::Left:
+					gameState.player.direction = PlayerDirection::Right;
+					gameState.player.position.x = PLAYER_SIZE / 2.f;
+					break;
+
+				case PlayerDirection::Right:
+					gameState.player.direction = PlayerDirection::Left;
+					gameState.player.position.x = SCREEN_WIDTH - PLAYER_SIZE / 2.f;
+					break;
+				}
+
+				if (gameState.timeSinceDamage <= 0.f)
+				{
+					gameState.crashSound.play();
+					gameState.player.HP += DAMAGE;
+					gameState.timeSinceDamage = 1.f;
+
+					if (gameState.player.HP <= 0)
+					{
+						gameState.player.HP = 0;
+						gameState.isGameOver = true;
+						gameState.backMusic.stop();
+						gameState.timeSinceGameOver = 0.f;
+					}
+				}
 			}
 
 			for (int i = 0; i < NUM_WALLS; i++)
 			{
 				// Check collision with walls
-				if (HasPlayerCollisionWithWall(gameState.player, gameState.walls[i]))
+				if (HasPlayerCollisionWithWall(gameState.player, gameState.walls[i])
+					&& gameState.timeSinceDamage <= 0.f)
 				{
-					gameState.backMusic.stop();
 					gameState.crashSound.play();
-					gameState.isGameOver = true;
-					gameState.timeSinceGameOver = 0.f;
+					gameState.player.HP += DAMAGE;
+					gameState.timeSinceDamage = 1.f;
+
+					if (gameState.player.HP <= 0) {
+						gameState.player.HP = 0;
+						gameState.isGameOver = true;
+						gameState.backMusic.stop();
+						gameState.timeSinceGameOver = 0.f;
+					}
+					break;
 				}
 			}
 

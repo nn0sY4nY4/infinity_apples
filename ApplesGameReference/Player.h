@@ -20,7 +20,7 @@ namespace ApplesGame
 		PlayerDirection direction = PlayerDirection::Up;
 		sf::Sprite sprite;
 		bool isOnWeb = false;
-		//float hp = 100.f;
+		float HP = 0.f;
 	};
 
 	void InitPlayer(Player& player, const sf::Texture& texture);
